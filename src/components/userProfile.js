@@ -1,10 +1,16 @@
 import React from "react";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import {useSelector} from 'react-redux'
+import {useSelector} from 'react-redux';
+import { useNavigate } from "react-router-dom";
 function UserProfile(){
+  let navigate=new useNavigate()
     let {userObj}=useSelector(state=>state.user);
+    let navigater=()=>{
+      navigate('/userdashboard/todos')   
+    }
     return(
+      
         <Card style={{ width: '18rem' }} className="mx-auto mt-5">
         <Card.Img variant="top" src={userObj.profileImg} />
         <Card.Body>
@@ -15,7 +21,7 @@ function UserProfile(){
           <Card.Text>
             {userObj.city}
           </Card.Text>
-          <Button variant="primary">Go somewhere</Button>
+          <Button variant="primary" onClick={navigater}>GoTo Todos</Button>
         </Card.Body>
       </Card>
     )

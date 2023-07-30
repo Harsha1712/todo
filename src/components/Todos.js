@@ -29,11 +29,13 @@ function Todos(){
           <th>Todos</th>
           <th>Date Added</th>
           <th>Time Added</th>
+          <th>Due Date</th>
+          <th>Due Time</th>
         </tr>
       </thead>
       <tbody>
         {todoAr.map((todos) => (<tr key={todos._id}><td>{todos.todo}</td>
-        <td>{todos.date}</td><td>{todos.time}</td></tr>))}
+        <td>{todos.date}</td><td>{todos.time}</td><td>{todos.dueDate}</td><td>{todos.dueTime}</td></tr>))}
     </tbody>
         </Table>
         </>

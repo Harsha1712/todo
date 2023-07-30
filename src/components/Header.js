@@ -6,7 +6,6 @@ import ContactUs from './ContactUs'
 import UserDashboard from './UserDashboard';
 import UserProfile from './userProfile'
 import { Navigate } from 'react-router-dom';
-import Count from './Count'
 import Add from './Add'
 import Todos from './Todos'
 import Change from './Change'
@@ -66,7 +65,6 @@ function Header()
         <Route path='userdashboard' element={<UserDashboard />} >
           <Route path='profile' element={<UserProfile/>}/>
           <Route path='todos' element={<Todos/>}/>
-          <Route path='count' element={<Count/>}/>
           <Route path='add' element={<Add/>}/>
           <Route path='' element={<Navigate to='profile' replace={true}/>}/>
         </Route>

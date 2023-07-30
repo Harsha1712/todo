@@ -20,11 +20,6 @@ return (
             </Nav.Link>
         </Nav.Item>
         <Nav.Item>
-            <Nav.Link to='count' as={NavLink}>
-                Count
-            </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
             <Nav.Link to='add' as={NavLink}>
                 Add
             </Nav.Link>

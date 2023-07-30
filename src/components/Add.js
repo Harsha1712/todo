@@ -45,6 +45,21 @@ const onFormSubmit=(todoObj)=>{
                 <Form.Control type='text' placeholder="Enter todo" {...register("todo",{required:true})}/>
                 {errors.todo&&<p classname='text-danger'>*Enter a todo</p>}
             </Form.Group>
+            <Form.Group className='mb-3'>
+                <Form.Label>
+                    To-Do
+                </Form.Label>
+                <Form.Control type='date' placeholder="Enter date" {...register("dueDate",{required:true})}/>
+                {errors.dueDate&&<p classname='text-danger'>*Enter a dueDate</p>}
+            </Form.Group>
+            <Form.Group className='mb-3'>
+                <Form.Label>
+                    To-Do
+                </Form.Label>
+                <Form.Control type='time' placeholder="Enter time" {...register("dueTime",{required:true})}/>
+                {errors.dueTime&&<p classname='text-danger'>*Enter a dueTime</p>}
+            </Form.Group>
+
             <Button variant='primary' type ='submit'>Add</Button>
         </Form>
         </>
