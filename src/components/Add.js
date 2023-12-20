@@ -47,14 +47,14 @@ const onFormSubmit=(todoObj)=>{
             </Form.Group>
             <Form.Group className='mb-3'>
                 <Form.Label>
-                    To-Do
+                    Due Date
                 </Form.Label>
                 <Form.Control type='date' placeholder="Enter date" {...register("dueDate",{required:true})}/>
                 {errors.dueDate&&<p classname='text-danger'>*Enter a dueDate</p>}
             </Form.Group>
             <Form.Group className='mb-3'>
                 <Form.Label>
-                    To-Do
+                    Due Time
                 </Form.Label>
                 <Form.Control type='time' placeholder="Enter time" {...register("dueTime",{required:true})}/>
                 {errors.dueTime&&<p classname='text-danger'>*Enter a dueTime</p>}

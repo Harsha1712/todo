@@ -18,6 +18,15 @@ function Todos(){
         })
         document.getElementById('btnn').disabled=true;
     }
+    const deleteTodos=async(todo)=>{
+        console.log("Entered")
+        let token=localStorage.getItem("token")
+        let response=await axios.delete('http://localhost:5000/user/todo/remove',{params:{todo},headers:{Authorization: "Bearer "+ token}})
+        setTodo(previousState=>{
+            return previousState.filter(prop => prop.todo !==todo)
+        })
+        console.log("Deleted")
+    }
     return (
         <>
         <button className="btn btn-warning d-block mx-auto mt-5" id= 'btnn'onClick={getTodos}>
@@ -31,11 +40,12 @@ function Todos(){
           <th>Time Added</th>
           <th>Due Date</th>
           <th>Due Time</th>
+          <th>Delete</th>
         </tr>
       </thead>
       <tbody>
         {todoAr.map((todos) => (<tr key={todos._id}><td>{todos.todo}</td>
-        <td>{todos.date}</td><td>{todos.time}</td><td>{todos.dueDate}</td><td>{todos.dueTime}</td></tr>))}
+        <td>{todos.date}</td><td>{todos.time}</td><td>{todos.dueDate}</td><td>{todos.dueTime}</td><td><button className="btn btn-warning d-block mx-auto mt-5" onClick={() => deleteTodos(todos.todo)}>Del</button></td></tr>))}
     </tbody>
         </Table>
         </>

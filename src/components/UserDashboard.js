@@ -8,19 +8,19 @@ function UserDashboard()
     let {userObj}=useSelector(state=>state.user)
 return (
     <>
-    <Nav className='justify-content-center mt-3' defaultActiveKey='/profile'>
+    <Nav className='justify-content-center mt-3 'variant="underline" defaultActiveKey='/profile'>
         <Nav.Item>
-            <Nav.Link to='profile' as={NavLink}>
+            <Nav.Link to='profile' as={NavLink} eventKey="link-0">
                 User Profile
             </Nav.Link>
         </Nav.Item>
         <Nav.Item>
-            <Nav.Link to='todos' as={NavLink}>
+            <Nav.Link to='todos' as={NavLink} eventKey="link-1">
                 Todos
             </Nav.Link>
         </Nav.Item>
         <Nav.Item>
-            <Nav.Link to='add' as={NavLink}>
+            <Nav.Link to='add' as={NavLink} eventKey="link-2">
                 Add
             </Nav.Link>
         </Nav.Item>

@@ -21,6 +21,12 @@ todoApp.post("/add",verifyToken,expressAsyncHandler(async(request,response)=>{
     await todoObj.insertOne(newTodoObj)
     response.send({message:"Entered todo"})
 }))
+todoApp.delete("/remove",verifyToken,expressAsyncHandler(async(request,response)=>{
+    let todoObj=request.app.get("todoCollectionObject")
+    console.log(request.query.todo)
+    await todoObj.deleteOne({todo:request.query.todo})
+    response.send({message:"Delete todo"})
+}))
 
 
 
